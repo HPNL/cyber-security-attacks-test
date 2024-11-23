@@ -68,18 +68,18 @@ $ ping 192.168.1.10
 ```
 R1# show processes cpu
 ```
-![schema](https://github.com/HPNL/cyber-security-attacks-test/tree/main/blob/dos/photo_2024-11-23_17-08-52.jpg)
+![schema](blob/dos/photo_2024-11-23_17-08-52.jpg)
 - From kali linux:
 ```
 $ hping3 -1 --flood -1 192.168.1.10
 ```
-![schema](blob\dos\photo_2024-11-23_17-08-35.jpg)
+![schema](blob/dos/photo_2024-11-23_17-08-35.jpg)
 
 $note:$ if we run this commad for more than 2 minutes, the target device will go down.
 
 - The check the router cpu performance again:
 
-![schema](blob\dos\photo_2024-11-23_17-08-57.jpg)
+![schema](blob/dos/photo_2024-11-23_17-08-57.jpg)
 
 - From kali wireshark or the embedded one on pnetlab we could observe huge amount of ECHO was sent to the target device.
 
@@ -93,7 +93,7 @@ R1# u all
 ___
 
 ## DDOS attack: SYN Flood Attack
-![schema1](blob\ddos\photo_2024-11-23_17-10-33.jpg)
+![schema1](blob/ddos/photo_2024-11-23_17-10-33.jpg)
 - First we config the router:
 
 ```
@@ -126,10 +126,10 @@ SRV# show ip
     ```
 - now we can access the SRV throuhg browser:
 
-![schema2](blob\ddos\photo_2024-11-23_17-10-25.jpg)
+![schema2](blob/ddos/photo_2024-11-23_17-10-25.jpg)
 
 - If we check wireshark we could capture syn , [syn, ack], and ack as the three way handshaking of TCP:
-![schema3](blob\ddos\SYN-ACK.png)
+![schema3](blob/ddos/SYN-ACK.png)
 
 - Now we are ready to attack:
 ```
@@ -138,11 +138,11 @@ hping3 -c 15000 -d 120 -w 64 -p 80 --flood --rand-source 192.168.128.140
 
 - The results are shown below:
 
-![schema4](blob\ddos\photo_2024-11-23_17-10-40.jpg)
-![schema5](blob\ddos\photo_2024-11-23_17-10-43.jpg)
-![schema6](blob\ddos\photo_2024-11-23_17-10-47.jpg)
+![schema4](blob/ddos/photo_2024-11-23_17-10-40.jpg)
+![schema5](blob/ddos/photo_2024-11-23_17-10-43.jpg)
+![schema6](blob/ddos/photo_2024-11-23_17-10-47.jpg)
 - Now if we stop the attack after a few seconds, SRV is back to normal again. (pay attention to the time!):
-![schema7](blob\ddos\photo_2024-11-23_17-10-51.jpg)
+![schema7](blob/ddos/photo_2024-11-23_17-10-51.jpg)
 
 ___
 
@@ -159,7 +159,7 @@ ___
 - A MITM attack is when an attacker intercepts communications between two parties.
 - The man-in-the middle attack intercepts a communication between two systems.
 
-![schema](blob\mitm\Screenshot-2024-11-23-203157.png)
+![schema](blob/mitm/Screenshot-2024-11-23-203157.png)
 
 ### config R1 and R2 :
 
@@ -224,20 +224,20 @@ R2(config)# do wr
 ```
 $ macchanger -m aa:aa:aa:aa:33:33 eth0
 ```
-![schema](blob\mitm\photo_2024-11-23_17-09-06.jpg)
+![schema](blob/mitm/photo_2024-11-23_17-09-06.jpg)
 
 - Now we can attack as shown below:
-![schema](blob\mitm\photo_2024-11-23_17-09-34.jpg)
-![schema](blob\mitm\Screenshot-2024-11-23-205022.png)
-![schema](blob\mitm\Screenshot-2024-11-23-205308.png)
+![schema](blob/mitm/photo_2024-11-23_17-09-34.jpg)
+![schema](blob/mitm/Screenshot-2024-11-23-205022.png)
+![schema](blob/mitm/Screenshot-2024-11-23-205308.png)
 
 - Now the results of the attack:
 
-![schema](blob\mitm\photo_2024-11-23_17-09-13.jpg)
+![schema](blob/mitm/photo_2024-11-23_17-09-13.jpg)
 ![schema](blob/mitm/photo_2024-11-23_17-09-17.jpg)
 - Compare these two with the first one earlier:
-![schema](blob\mitm\photo_2024-11-23_17-09-24.jpg)
-![schema](blob\mitm\photo_2024-11-23_17-09-29.jpg)
+![schema](blob/mitm/photo_2024-11-23_17-09-24.jpg)
+![schema](blob/mitm/photo_2024-11-23_17-09-29.jpg)
 ___
 
 ## VLAN Hopping: double tagging method
