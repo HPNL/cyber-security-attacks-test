@@ -14,7 +14,7 @@ ___
 
 ## DOS ATTACK: ICMP Flood Attack
 
-![schema](blob\dos\photo_2024-11-23_17-09-01.jpg)
+![schema](blob/dos/photo_2024-11-23_17-09-01.jpg)
 
 ### Kali Configuration:
 
@@ -68,7 +68,7 @@ $ ping 192.168.1.10
 ```
 R1# show processes cpu
 ```
-![schema](blob\dos\photo_2024-11-23_17-08-52.jpg)
+![schema](https://github.com/HPNL/cyber-security-attacks-test/tree/main/blob/dos/photo_2024-11-23_17-08-52.jpg)
 - From kali linux:
 ```
 $ hping3 -1 --flood -1 192.168.1.10
