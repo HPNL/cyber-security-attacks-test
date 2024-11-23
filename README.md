@@ -14,7 +14,7 @@ ___
 
 ## DOS ATTACK: ICMP Flood Attack
 
-![schema](.\blob\dos\photo_2024-11-23_17-09-01.jpg)
+![schema](blob/dos/photo_2024-11-23_17-09-01.jpg)
 
 ### Kali Configuration:
 
