@@ -113,7 +113,7 @@ SRV(config)# ip http authentication local
 SRV(config)# username admin privilege 15 password 123
 SRV(config)# do wr
 SRV(config)# ^Z (ctrl + Z)
-SRV# show ip
+SRV# show ip int br
 
 ```
 - Let's find out our kali linux ip:
@@ -194,7 +194,7 @@ Router> en
 Router#
 Router# config t "or terminal"
 Router(config)#
-Router(config)# hostname R1
+Router(config)# hostname R2
 R2(config)#
 R2(config)# interface f0/0
 R2(config-if)#
