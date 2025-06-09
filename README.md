@@ -10,7 +10,8 @@ ___
 - [Fortigate firewall topology](./Fortigate%20firewall%20topology/firewall.md)
 
 - [DNS Spoofing Attack](./DNS%20Spoofing/dns.md)
-
+- [DHCP Starvation](./DHCP%20starvation/dhcp.md)
+- [demo of Lab 10 of the network lab](./NetLab%2010/lab10.md)
 - [Server Monitoring]()
 - [QoS Monitoing]()
 ___
@@ -24,3 +25,12 @@ ___
 - [DHCP Starvation](https://www.youtube.com/watch?v=VJuWOrUXbfo)
 
 - [Monitoring](./Reference/monitoring-references.txt)
+
+---
+
+## Remaining Tasks:
+- Add new and up-to-date network security labs.
+- Monitoring:
+    1. dockerize data gathering tools.
+    2. use kubernetes to manage better.
+    3. 
