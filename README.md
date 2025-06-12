@@ -1,5 +1,10 @@
-# cyber-security-attacks-test
-Analyzing cyber security attacks with PnetLab for a bachelor's project
+# NetSec Lab: cyber-security-attacks-test
+
+## Outline:
+
+* Analyzing cyber security attacks with PnetLab for a bachelor's project. 
+* Simple NetSec Lab.
+* Monitoring.
 ___
 
 ## Preview
@@ -12,8 +17,8 @@ ___
 - [DNS Spoofing Attack](./DNS%20Spoofing/dns.md)
 - [DHCP Starvation](./DHCP%20starvation/dhcp.md)
 - [demo of Lab 10 of the network lab](./NetLab%2010/lab10.md)
-- [Server Monitoring]()
-- [QoS Monitoing]()
+- [Server Monitoring](./Monitoring/server_monitoring.md)
+- [QoS Monitoing](./Monitoring/qos_monitoring.md)
 ___
 
 ## Referenences:
@@ -28,9 +33,15 @@ ___
 
 ---
 
-## Remaining Tasks:
-- Add new and up-to-date network security labs.
-- Monitoring:
-    1. dockerize data gathering tools.
-    2. use kubernetes to manage better.
-    3. 
+
+## Remaining Tasks
+#### Network Security Laboratory Development:
+
+- Develop and integrate current, hands-on network security labs to reflect the latest industry threats and best practices.
+#### Monitoring Infrastructure Enhancements:
+
+1. **Containerization:** Package data gathering and analysis tools into Docker containers for standardized and portable deployment.
+2. **Orchestration:** Leverage Kubernetes to orchestrate and manage the containerized monitoring services, enhancing scalability and resilience.
+3. **Intrusion Detection:** Deploy a network-based Intrusion Detection System (IDS) to analyze traffic and identify potential threats prior to reaching the server endpoint.
+4. **Firewall Implementation:** Deploy and configure a firewall, establishing a comprehensive rule set to enforce access control policies and protect the network perimeter.
+5. **Targeted Traffic Analysis:** Configure port mirroring (SPAN) on the network switch to isolate and monitor inbound traffic from external sources, filtering out non-relevant network segments.
