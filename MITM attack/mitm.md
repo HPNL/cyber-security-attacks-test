@@ -84,6 +84,8 @@ $ macchanger -m aa:aa:aa:aa:33:33 eth0
 ![schema](../blob/mitm/photo_2024-11-23_17-09-06.jpg)
 
 - Now we can attack as shown below:
+
+
 ![schema](../blob/mitm/photo_2024-11-23_17-09-34.jpg)
 ![schema](../blob/mitm/Screenshot-2024-11-23-205022.png)
 ![schema](../blob/mitm/Screenshot-2024-11-23-205308.png)
